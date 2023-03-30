@@ -1,6 +1,6 @@
 # JobOpening
 
-I have used SQL Express as my DataBase and Microsoft SQL Server Management Studio 
+I have used .Net 7.0 and SQL Express and Microsoft SQL Server Management Studio 
 The Schema and Data Script called JobOpeningDBScript is added to the repo
 
 To run the scripts 
