@@ -34,7 +34,7 @@ namespace JobOpenings.Controllers
             return Ok(response);
         }
         [HttpPost]
-        [Route("GetJobsList")]
+        [Route("JobsList")]
         public async Task<ActionResult<List<Job>>> GetJobsList(Request request)
         {
             var response = _jobService.GetJobList(request);
@@ -83,6 +83,7 @@ namespace JobOpenings.Controllers
                     LocationId = jobViewModel.LocationId,
                     DepartmentId = jobViewModel.DepartmentId,
                     ClosingDate = jobViewModel.ClosingDate,
+                    PostedDate = DateTime.UtcNow
                 };
                 _jobService.Modify(job);
                 return Ok();
