@@ -7,7 +7,7 @@ namespace JobOpenings.Services.JobService
 {
     public interface IJobService : IRepository<Job>
     {
-        Task<ActionResult<JobsListViewModel>> GetJobList(Request request);
-        Task<ActionResult<Job>> GetJob(int id);
+        Task<JobsListViewModel> GetJobList(Request request);
+        Task<Job> GetJob(int id);
     }
 }

@@ -15,7 +15,7 @@ namespace JobOpenings.Services.JobService
         {
             _context = context;
         }
-        public async Task<ActionResult<JobsListViewModel>> GetJobList(Request request)
+        public async Task<JobsListViewModel> GetJobList(Request request)
         {
 
             JobsListViewModel jobsListViewModel = new JobsListViewModel();
@@ -30,7 +30,7 @@ namespace JobOpenings.Services.JobService
             }
             return jobsListViewModel;
         }
-        public async Task<ActionResult<Job>> GetJob(int id)
+        public async Task<Job> GetJob(int id)
         {
             var job = _context.Set<Job>().Where(x =>x.Id ==id).Include(x=>x.Location).Include(x=>x.Department).FirstOrDefault();
             return job;

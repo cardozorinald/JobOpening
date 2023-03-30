@@ -18,26 +18,22 @@ namespace JobOpenings.Controllers
     public class JobController : Controller
     {
         private readonly IJobService _jobService;
-        private readonly ILocationService _locationService;
-        private readonly IDepartmentService _departmentService;
 
-        public JobController(IJobService jobService, IDepartmentService departmentService,ILocationService locationService)
+        public JobController(IJobService jobService)
         {
             _jobService = jobService;
-            _locationService = locationService;
-            _departmentService = departmentService;
         }
         [HttpGet("{id}")]
-        public async Task<ActionResult<List<Job>>> GetJob(int id)
+        public async Task<ActionResult<Job>> GetJob(int id)
         {
-            var response = _jobService.GetById(id);
-            return Ok(response);
+            var job = await _jobService.GetJob(id);
+            return Ok(job);
         }
         [HttpPost]
         [Route("JobsList")]
-        public async Task<ActionResult<List<Job>>> GetJobsList(Request request)
+        public async Task<ActionResult<JobsListViewModel>> GetJobsList(Request request)
         {
-            var response = _jobService.GetJobList(request);
+            var response = await _jobService.GetJobList(request);
             return Ok(response);
         }
         [HttpPost]
