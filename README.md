@@ -1,7 +1,7 @@
 # JobOpening
 
 I have used SQL Express as my DataBase and Microsoft SQL Server Management Studio 
-The Scripts of the Schema and the Data is added to the repo
+The Schema and Data Script called JobOpeningDBScript is added to the repo
 
 To run the scripts 
 1: Open SQL Server Management Studio and connect to a SQL Express instance
