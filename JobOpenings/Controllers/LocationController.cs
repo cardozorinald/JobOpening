@@ -35,8 +35,8 @@ namespace JobOpenings.Controllers
         {
             try
             {
-                var a = _locationService.Add(location);
-                return Ok(a);
+                var response = _locationService.Add(location);
+                return Ok(response);
 
             }
             catch (Exception ex)
@@ -45,7 +45,7 @@ namespace JobOpenings.Controllers
             }
         }
         [HttpPut("{id}")]
-        public async Task<ActionResult<Location>> UpdateLocation(int id, Location location)
+        public async Task<ActionResult> UpdateLocation(int id, Location location)
         {
             try
             {

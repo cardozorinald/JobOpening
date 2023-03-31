@@ -36,8 +36,8 @@ namespace JobOpenings.Controllers
             try
             {
                 var department = new Department{ Title = departmentTitle};
-                _departmentService.Add(department);
-                return Ok();
+                var response = _departmentService.Add(department);
+                return Ok(response);
 
             }
             catch (Exception ex)
