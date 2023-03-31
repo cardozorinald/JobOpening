@@ -37,7 +37,8 @@ namespace JobOpenings.Controllers
             return Ok(response);
         }
         [HttpPost]
-        public async Task<ActionResult<Job>> AddJob(JobModel jobViewModel)
+        [ProducesResponseType(typeof(void), 201)]
+        public async Task<ActionResult> AddJob(JobModel jobViewModel)
         {
             try
             {
